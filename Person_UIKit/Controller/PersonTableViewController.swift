@@ -9,6 +9,24 @@ import UIKit
 
 class PersonTableViewController: UITableViewController {
 
+    var namesArray = ["John", "Aaron", "Tim", "Ted", "Steven"]
+    var surnamesArray = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jankins"]
+    var emailArray = [
+        "smith@gmail.com",
+        "dow@gmail.com",
+        "isaacson@gmail.com",
+        "pennyworth@gmail.com",
+        "jankins@gmail.com"
+    ]
+    var phoneNumberArray = [
+        "+375(44)111-11-11",
+        "+375(44)222-22-22",
+        "+375(44)333-33-33",
+        "+375(44)444-44-44",
+        "+375(44)555-55-55"
+    ]
+    var personsRandom: [Person] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +39,39 @@ class PersonTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return namesArray.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fullName", for: indexPath)
+        
+        if !namesArray.isEmpty && !surnamesArray.isEmpty &&
+            !emailArray.isEmpty && !phoneNumberArray.isEmpty{
+            let person = Person(
+                name: namesArray.randomElement()!,
+                surname: surnamesArray.randomElement()!,
+                email: emailArray.randomElement()!,
+                phoneNumber: phoneNumberArray.randomElement()!
+            )
+            personsRandom.append(person)
+        }
+
+        for person in personsRandom{
+            let name = String(person.name)
+                namesArray.removeAll { $0 == name }
+            let surname = String(person.surname)
+                surnamesArray.removeAll { $0 == surname }
+            let email = String(person.surname)
+                emailArray.removeAll { $0 == email }
+            let phoneNumber = String(person.surname)
+                phoneNumberArray.removeAll { $0 == phoneNumber }
+        }
+        
+        cell.textLabel?.text = "\(personsRandom[indexPath.row].name) \(personsRandom[indexPath.row].surname)"
+
+        return cell
     }
 
     /*
@@ -85,5 +128,11 @@ class PersonTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let detailVC = segue.destination as! DetailsViewController
+            detailVC.detailArray = personsRandom[indexPath.row]
+        }
+    }
 }

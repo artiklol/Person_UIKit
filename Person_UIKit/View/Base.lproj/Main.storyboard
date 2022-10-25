@@ -3,11 +3,12 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Persons list-->
+        <!--Persons-->
         <scene sceneID="c6v-TR-wBw">
             <objects>
                 <tableViewController id="5sX-55-Bjk" customClass="PersonTableViewController" customModule="Person_UIKit" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ijy-yR-cHf" kind="show" id="yRa-GP-741"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,11 +34,89 @@
                             <outlet property="delegate" destination="5sX-55-Bjk" id="XBW-wO-6L4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Persons list" id="Kz8-62-mCY"/>
+                    <navigationItem key="navigationItem" title="Persons" id="Kz8-62-mCY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmF-nz-2wH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970.7692307692307" y="-21.327014218009477"/>
+            <point key="canvasLocation" x="1171" y="709"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="3uh-gh-uGG">
+            <objects>
+                <viewController id="ijy-yR-cHf" customClass="DetailsViewController" customModule="Person_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t0e-RM-LrF">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzw-LU-eiW">
+                                <rect key="frame" x="50" y="111" width="290" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="96L-a9-3f3">
+                                <rect key="frame" x="20" y="325" width="123" height="51.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMZ-S2-8Rs">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29x-8B-NSH">
+                                        <rect key="frame" x="0.0" y="29.666666666666686" width="123" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="R3G-Sx-tW5"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jem-d2-rde">
+                                <rect key="frame" x="153" y="325" width="217" height="51.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxb-Vl-6ux">
+                                        <rect key="frame" x="0.0" y="0.0" width="217" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYl-xI-r09">
+                                        <rect key="frame" x="0.0" y="29.666666666666686" width="217" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nak-pn-pBb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nak-pn-pBb" firstAttribute="bottom" secondItem="96L-a9-3f3" secondAttribute="bottom" constant="384.67000000000002" id="Cg0-JJ-yDl"/>
+                            <constraint firstItem="uzw-LU-eiW" firstAttribute="top" secondItem="nak-pn-pBb" secondAttribute="top" constant="20" id="EKs-hh-SfJ"/>
+                            <constraint firstItem="Jem-d2-rde" firstAttribute="top" secondItem="uzw-LU-eiW" secondAttribute="bottom" constant="178" id="JVX-V5-NHK"/>
+                            <constraint firstItem="uzw-LU-eiW" firstAttribute="leading" secondItem="nak-pn-pBb" secondAttribute="leading" constant="50" id="Uar-j2-YEo"/>
+                            <constraint firstItem="96L-a9-3f3" firstAttribute="leading" secondItem="nak-pn-pBb" secondAttribute="leading" constant="20" id="Z94-dK-rTY"/>
+                            <constraint firstItem="Jem-d2-rde" firstAttribute="leading" secondItem="96L-a9-3f3" secondAttribute="trailing" constant="10" id="ZI2-Ip-Unh"/>
+                            <constraint firstItem="nak-pn-pBb" firstAttribute="bottom" secondItem="Jem-d2-rde" secondAttribute="bottom" constant="384.67000000000002" id="d01-JS-mn1"/>
+                            <constraint firstItem="nak-pn-pBb" firstAttribute="trailing" secondItem="Jem-d2-rde" secondAttribute="trailing" constant="20" id="h1K-e9-INu"/>
+                            <constraint firstItem="nak-pn-pBb" firstAttribute="trailing" secondItem="uzw-LU-eiW" secondAttribute="trailing" constant="50" id="mhU-PX-eNV"/>
+                            <constraint firstItem="96L-a9-3f3" firstAttribute="top" secondItem="uzw-LU-eiW" secondAttribute="bottom" constant="178" id="oJI-7r-0CM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="lIh-e4-qXz"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="dYl-xI-r09" id="RQI-vH-ygI"/>
+                        <outlet property="fullNameLabel" destination="uzw-LU-eiW" id="7A5-MQ-D38"/>
+                        <outlet property="phoneNumberLabel" destination="zxb-Vl-6ux" id="9oS-yD-ju7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Drb-1p-Wou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196.9230769230767" y="708.76777251184831"/>
         </scene>
         <!--Section-->
         <scene sceneID="aCI-TS-2vu">
@@ -63,14 +145,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzX-XM-iz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2978.4615384615386" y="-21.327014218009477"/>
+            <point key="canvasLocation" x="1171" y="-21"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Setting Tab Bar Controller-->
         <scene sceneID="1oP-0j-tC3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Om8-Uh-OHZ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Om8-Uh-OHZ" customClass="SettingTabBarController" customModule="Person_UIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NeL-kU-uPE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -100,7 +183,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIt-1L-vX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041.5384615384614" y="-21.327014218009477"/>
+            <point key="canvasLocation" x="112" y="709"/>
         </scene>
     </scenes>
     <resources>
