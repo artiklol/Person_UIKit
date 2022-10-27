@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		062F5FDD290860FD005037CF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F5FDC290860FC005037CF /* DetailsViewController.swift */; };
+		0686201D290AB75B001F0555 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686201C290AB75B001F0555 /* DataManager.swift */; };
 		069BA41A29083E8700A4330D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069BA41929083E8700A4330D /* AppDelegate.swift */; };
 		069BA41C29083E8700A4330D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069BA41B29083E8700A4330D /* SceneDelegate.swift */; };
 		069BA42129083E8700A4330D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069BA41F29083E8700A4330D /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		062F5FDC290860FC005037CF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		0686201C290AB75B001F0555 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		069BA41629083E8700A4330D /* Person_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Person_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069BA41929083E8700A4330D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		069BA41B29083E8700A4330D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				069BA4382908498A00A4330D /* Person.swift */,
+				0686201C290AB75B001F0555 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				069BA4392908498A00A4330D /* Person.swift in Sources */,
+				0686201D290AB75B001F0555 /* DataManager.swift in Sources */,
 				069BA4372908493700A4330D /* SettingTabBarController.swift in Sources */,
 				069BA41A29083E8700A4330D /* AppDelegate.swift in Sources */,
 				069BA41C29083E8700A4330D /* SceneDelegate.swift in Sources */,
