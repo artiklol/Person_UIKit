@@ -8,28 +8,50 @@
 import UIKit
 
 class SectionTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+    let GroupSection = ["---","Описание","Ингредиенты","Как приготовить", "Пищевая ценность"]
+    let itemsInfoArrays = [
+    ["1111111111111111"],
+    ["1.4","1.5","1.6"],
+    ["22", "33"],
+    ["6","7", "8"],
+    ["26","27", "28"]
+    ]
+    var name: [String] = []
+    var email: [[String]] = []
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // Количество секций
+        return personsRandom.count
     }
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // Количество данных в каждой секции
+        for person in personsRandom{
+            email.append([person.email])
+        }
+        return email[section].count
+        
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fullInfo", for: indexPath)
+        
+        // Заполняем данные в каждую секцию
+        cell.textLabel?.text = email[indexPath.section][indexPath.row]
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        for person in personsRandom{
+            name.append(person.name)
+        }
+        let section = name[section]
+        return section
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

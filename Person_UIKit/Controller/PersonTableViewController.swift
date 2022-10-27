@@ -25,17 +25,7 @@ class PersonTableViewController: UITableViewController {
         "+375(44)444-44-44",
         "+375(44)555-55-55"
     ]
-    var personsRandom: [Person] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
 
     // MARK: - Table view data source
 
